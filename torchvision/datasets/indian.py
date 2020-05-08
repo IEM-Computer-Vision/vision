@@ -45,7 +45,6 @@ class IndianPines(VisionDataset):
     label_url = "http://www.ehu.eus/ccwintco/uploads/c/c4/Indian_pines_gt.mat"
     file_data = "Indian_pines_corrected.mat"
     file_tgt = "Indian_pines_gt.mat"
-   
     def __init__(self, root, train=True, transform=None, target_transform=None,
                  download=False,split=0.95):
 
@@ -63,7 +62,8 @@ class IndianPines(VisionDataset):
             self.data,self.targets = self.data[:int(np.ceil(split*length)),:,:,:],self.targets[:int(np.ceil(split*length))]
             
         else:
-            self.data,self.targets = self.data[:int(-np.ceil((split*length)),:,:,:],self.targets[:int(-np.ceil(split*length))]
+            self.data,self.targets = self.data[:int(-np.ceil(split*length)),:,:,:],
+                                                    self.targets[:int(-np.ceil(split*length))]
             
             
             
